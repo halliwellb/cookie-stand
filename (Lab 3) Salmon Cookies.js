@@ -1,15 +1,15 @@
-'use strict';
-
 let standOpen = 6;
 let standClose = 20;
 let hoursOpen = standClose - standOpen;
 let locations = [];
+const tableBodyEl = document.getElementById('table-values');
 
-function Store (storeLoc, minCustHr, maxCustHR, avgPurch) {
-    this.storeLoc = storeLoc;
-    this.min = minCustHr;
-    this.max = maxCustHR;
-    this.avgPurch = avgPurch;
+
+function Store (store_Loc, min_Cust, max_Cust, avg_Purch) {
+    this.storeLoc = store_Loc;
+    this.min = min_Cust;
+    this.max = max_Cust;
+    this.avgPurch = avg_Purch;
     this.hourlyCustomers = [];
     this.hourlyCookies = [];
     this.totalCookiesSold = 0;
@@ -132,9 +132,10 @@ while (h <= hoursOpen) {
     h++;
 }
 
-let grandTotalFoot = document.createElement('td');
+let grandTotalFoot = document.getElementById('footer-row');
 grandTotalFoot.textContent = grandTotal;
 footRow.appendChild(grandTotalFoot);
+
 }
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
@@ -142,6 +143,28 @@ let tokyo = new Store('Tokyo', 3, 24, 1.2);
 let dubai = new Store('Dubai', 11, 38, 3.7);
 let paris = new Store('Paris', 20, 38, 2.3);
 let lima = new Store('Lima', 2, 16, 4.6);
+
+let buttonEl = document.getElementById('user-submit');
+
+let formEl =document.getElementById('new-cookie-form');
+
+formEl.addEventListener('submit', function(submit) {
+    submit.preventDefault();
+    let { store_Loc, min_Cust, max_Cust, avg_Purch } = submit.target;
+
+    let newStore = new Store(
+        store_Loc.value, 
+        parseInt(min_Cust.value),
+        parseInt(max_Cust.value),
+        parseInt(avg_Purch.value)
+    );
+
+locations.push(newStore);
+newStore.daysCookiesSold();
+
+newStore.render();
+displayTableFooter();
+});
 
 displayTableHeader();
 displayTableBody();
