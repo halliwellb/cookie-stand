@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salmon Cookies</title>
-    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/sales.css">
 </head>
+
 <body>
     <header>
-    <h1>Salmon Cookies</h1>
+        <h1>Salmon Cookies Sales Numbers</h1>
     </header>
-    <form id="new-cookie-form">
-        <fieldset>
-            <!-- <label for =""> MUST match the <input id=""> -->
-            <legend>New Location for Pat's Salmon Cookies</legend>
-            <section>
-                <label for ="new-location-input">New Store Location at: (required)</label>
-                <input type="text" placeholder="New Delhi" id="new-location-input" name="store_Loc" required>
-            </section>
-            <section>
-                <label for ="min-cust-input">Min Hourly Customers expected: (required)</label>
-                <input type="number" placeholder="12" id="min-cust-input" name="min_Cust" required>
-            </section>
-            <section>
-                <label for ="max-cust-input">Max Hourly Customers expected: (required)</label>
-                <input type="number" placeholder="70" id="max-cust-input" name="max_Cust" required>
-            </section>
-            <section>
-                <label for ="avg-purchase-input">Avg cookies per customer expected: (required)</label>
-                <input type="number" placeholder="5" id="avg-purchase-input" name="avg_Purch" required>
-            </section>
-            <button type="submit" id="user-submit">Submit choice!</button>
-        </fieldset>
-    </form>
-    <table id="dataTable">
-        <thead></thead>
-        <tbody id="table-values"></tbody>
-        <tfoot id="footer-row"></tfoot>
-    </table>
-    <script src="(Lab 3) Salmon Cookies.js"></script>
+    <main>
+        <section class="main">
+            <form id="new-cookie-form">
+                <fieldset>
+                    <!-- <label for =""> MUST match the <input id=""> -->
+                    <legend>New Location for Pat's Salmon Cookies</legend>
+                    <section>
+                        <label for="new-location-input">New Store Location at: (required)</label>
+                        <input type="text" placeholder="New Delhi" id="new-location-input" name="store_Loc" required>
+                    </section>
+                    <section>
+                        <label for="min-cust-input">Min Hourly Customers expected: (required)</label>
+                        <input type="number" placeholder="12" id="min-cust-input" name="min_Cust" required>
+                    </section>
+                    <section>
+                        <label for="max-cust-input">Max Hourly Customers expected: (required)</label>
+                        <input type="number" placeholder="70" id="max-cust-input" name="max_Cust" required>
+                    </section>
+                    <section>
+                        <label for="avg-purchase-input">Avg cookies per customer expected: (required)</label>
+                        <input type="number" placeholder="5" id="avg-purchase-input" name="avg_Purch" required>
+                    </section>
+                    <button type="submit" id="user-submit">Submit choice!</button>
+                </fieldset>
+            </form>
+            <table id="dataTable">
+                <thead></thead>
+                <tbody id="table-values"></tbody>
+                <tfoot id="footer-row"></tfoot>
+            </table>
+            <a href="https://halliwellb.github.io/cookie-stand/" class = "title">Sales Information</a>
+            <script src="(Lab 3) Salmon Cookies.js"></script>
+        </section>
+    </main>
 </body>
+
 </html>
